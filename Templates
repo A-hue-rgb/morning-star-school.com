@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morning Star Pre-School</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: #fffdf5;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #16834a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 30px;
+        }
+
+        nav {
+            background: #ffcf40;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #26382b;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 12px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 65px 20px;
+            background: #e8f7e9;
+        }
+
+        .hero h2 {
+            color: #16834a;
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 22px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #16834a;
+            color: white;
+            padding: 12px 22px;
+            margin: 6px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #106638;
+        }
+
+        section {
+            padding: 35px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #16834a;
+            margin-bottom: 20px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px #00000012;
+        }
+
+        .card h3 {
+            color: #16834a;
+            margin-bottom: 8px;
+        }
+
+        #announcements {
+            background: #fff4c7;
+            border-radius: 10px;
+            padding: 24px;
+        }
+
+        footer {
+            background: #16834a;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            margin-top: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            .hero h2 {
+                font-size: 27px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Morning Star Pre-School</h1>
+        <p>Where Learning Begins with Joy!</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#programs">Programs</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#announcements">Announcements</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section class="hero" id="home">
+            <h2>A Bright Beginning for Every Child!</h2>
+            <p>
+                A happy and caring place where children learn,
+                play, explore and grow with confidence.
+            </p>
+            <a class="button" href="#admissions">Admissions Open</a>
+            <a class="button" href="#contact">Contact Us</a>
+        </section>
+
+        <section id="programs">
+            <h2>Our Learning Programs</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Playgroup</h3>
+                    <p>Learning through play, activities and fun.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Nursery</h3>
+                    <p>Building early language and social skills.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Junior KG</h3>
+                    <p>Developing creativity and basic learning.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Senior KG</h3>
+                    <p>Preparing children for their next school journey.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="admissions">
+            <h2>Admissions</h2>
+            <div class="card">
+                <p>
+                    Give your child a joyful start to learning
+                    at Morning Star Pre-School.
+                </p>
+                <p>Contact us to enquire about admissions and available branches.</p>
+                <a class="button" href="#contact">Enquire Now</a>
+            </div>
+        </section>
+
+        <section id="announcements">
+            <h2>Latest Announcements</h2>
+
+            {% if announcements %}
+                {% for announcement in announcements %}
+                    <div class="card" style="margin-bottom: 12px;">
+                        {{ announcement }}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p style="text-align: center;">
+                    Please contact the school for the latest updates.
+                </p>
+            {% endif %}
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Taloja Branches</h3>
+                    <p>Contact us for branch details and admissions.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Kharghar Branches</h3>
+                    <p>Contact us for branch details and admissions.</p>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 20px;">
+                Please contact the school to confirm phone numbers,
+                branch addresses and visiting hours.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Morning Star Pre-School. All rights reserved.</p>
+        <p>Where Learning Begins with Joy!</p>
+    </footer>
+
+</body>
+</html>
