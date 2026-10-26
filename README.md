@@ -1,1 +1,2 @@
-# morning-star-school.com
+Flask>=3.0,<4.0
+gunicorn
