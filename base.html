@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fffaf3"><title>{% block title %}Morning Star Pre-School{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body>
+<div class="topbar">🌈 Little steps, big dreams <span>•</span> Admissions enquiries welcome</div>
+<header class="header"><a class="brand" href="{{ url_for('home') }}"><span class="logo">✦</span><span><b>morning star</b><small>PRE-SCHOOL</small></span></a>
+<button class="menu-toggle" aria-label="Toggle navigation">☰</button><nav class="nav"><a href="{{ url_for('home') }}">Home</a><a href="{{ url_for('home') }}#about">About</a><a href="{{ url_for('home') }}#programs">Classes</a><a href="{{ url_for('home') }}#activities">Activities</a><a href="{{ url_for('contact') }}">Contact</a><a class="nav-button" href="{{ url_for('admissions') }}">Admissions ↗</a></nav></header>
+{% with flashes=get_flashed_messages(with_categories=true) %}{% if flashes %}<div class="flash-wrap">{% for category,message in flashes %}<div class="flash {{ category }}">{{ message }}</div>{% endfor %}</div>{% endif %}{% endwith %}
+<main>{% block content %}{% endblock %}</main>
+<footer class="footer"><a class="brand footer-brand" href="{{ url_for('home') }}"><span class="logo">✦</span><span><b>morning star</b><small>PRE-SCHOOL</small></span></a><p>Where Learning Begins with Joy! 💛</p><div class="footlinks"><a href="{{ url_for('home') }}#about">About</a><a href="{{ url_for('home') }}#programs">Classes</a><a href="{{ url_for('contact') }}">Contact</a><a href="{{ url_for('admin_login') }}">Admin login</a></div><small>© <span id="year"></span> Morning Star Pre-School</small></footer>
+<button class="to-top" aria-label="Back to top">↑</button><script src="{{ url_for('static', filename='script.js') }}"></script></body></html>

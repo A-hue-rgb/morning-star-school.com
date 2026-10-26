@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block title %}Admissions | Morning Star Pre-School{% endblock %}{% block content %}
+<section class="page-hero"><span class="eyebrow">TAKE THE FIRST STEP</span><h1>Admission <em>enquiry</em></h1><p>Tell us a little about your child. The school team can use these details to follow up.</p></section>
+<section class="form-layout wrap" id="admission-form"><div class="form-side"><span class="big-emoji">🌈</span><h2>Every little star has a place to shine.</h2><p>Fill in the form and your enquiry will be saved securely in this website's local database.</p><div class="form-tip">💛 Fields marked * are required.</div></div><form class="form-card" method="post">
+<label>Parent / Guardian name *<input name="parent_name" required maxlength="100" placeholder="Your full name"></label>
+<label>Child's name *<input name="child_name" required maxlength="100" placeholder="Child's full name"></label>
+<div class="two-fields"><label>Phone number *<input name="phone" type="tel" required maxlength="20" placeholder="Contact number"></label><label>Email address<input name="email" type="email" maxlength="120" placeholder="you@example.com"></label></div>
+<div class="two-fields"><label>Class interested in *<select name="class_name" required><option value="">Choose a class</option><option>Playgroup</option><option>Nursery</option><option>Junior KG</option><option>Senior KG</option></select></label><label>Preferred branch<input name="branch" maxlength="120" placeholder="e.g. Taloja / Kharghar"></label></div>
+<label>Anything you would like us to know?<textarea name="message" rows="4" maxlength="1500" placeholder="Questions, preferred visit time, etc."></textarea></label>
+<button class="btn primary submit-btn" type="submit">Submit admission enquiry →</button><p class="privacy-note">Please share only information needed for your enquiry. This form does not complete enrolment or guarantee a place.</p>
+</form></section>{% endblock %}
